@@ -6,17 +6,5 @@ func IsLeapYear(year int) bool {
 		return year % divisor == 0
 	}
 
-	if isDivisibleBy(4) {
-		if isDivisibleBy(100) {
-			if isDivisibleBy(400) {
-				return true
-			} else {
-				return false
-			}
-		} else {
-			return true
-		}
-	} else {
-		return false
-	}
+	return isDivisibleBy(4) && !isDivisibleBy(100) || isDivisibleBy(400)
 }
